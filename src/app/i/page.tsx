@@ -10,14 +10,18 @@ import { useLanguageStore } from '@/store/useLanguageStore'
 export default function DashboardPage() {
 	const { language } = useLanguageStore()
 	return (
-		<div className='m-4 bg-white rounded-lg'>
+		<div className='md:m-4 w-full md:bg-white md:rounded-lg '>
 			<div>
 				<Heading title={language === 'latin' ? 'Bosh sahifa' : 'Бош саҳифа'} />
 			</div>
-			<div className='px-6'>
+			<div className='md:px-6 p-4 bg-white rounded-2xl overflow-y-auto h-screen'>
 				<MostListened />
-				<SpeakersSection />
-				<VoicesSection />
+				<div className='order-2 md:order-1'>
+					<VoicesSection />
+				</div>
+				<div className='order-1 md:order-2'>
+					<SpeakersSection />
+				</div>
 			</div>
 		</div>
 	)

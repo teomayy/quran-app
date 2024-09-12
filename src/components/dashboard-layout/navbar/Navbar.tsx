@@ -7,8 +7,8 @@ import { useLanguageStore } from '@/store/useLanguageStore'
 export function Navbar() {
 	const { language } = useLanguageStore()
 	return (
-		<header className='p-4'>
-			<form className='relative flex items-center w-full gap-4'>
+		<header className='p-4 hidden md:block'>
+			<form className='relative flex items-center w-full gap-4 '>
 				<input
 					type='text'
 					placeholder={language === 'latin' ? 'Qidirish' : 'Қидириш'}

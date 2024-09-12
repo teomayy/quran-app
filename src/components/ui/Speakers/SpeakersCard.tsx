@@ -7,7 +7,7 @@ interface ISCardProps {
 const SpeakersCard: React.FC<ISCardProps> = ({ name, image, birth_place }) => {
 	return (
 		<div className='w-full flex flex-col gap-2 mb-4  items-start '>
-			<div className='w-60 h-60 sm:w-[183px] sm:h-[183px] '>
+			<div className='md:w-44 md:h-44 h-28 w-44'>
 				<img
 					src={image}
 					alt={name}
@@ -16,7 +16,7 @@ const SpeakersCard: React.FC<ISCardProps> = ({ name, image, birth_place }) => {
 			</div>
 
 			<p>{name}</p>
-			<sub>{birth_place}</sub>
+			<sub className='hidden md:block'>{birth_place}</sub>
 		</div>
 	)
 }

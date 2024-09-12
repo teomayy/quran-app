@@ -1,5 +1,6 @@
 'use client'
 
+import { ChevronRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 import { useLanguageStore } from '@/store/useLanguageStore'
@@ -42,12 +43,12 @@ const VoicesSection: React.FC = () => {
 
 	return (
 		<section>
-			<div className='my-4 flex justify-between'>
-				<h2 className='text-2xl font-medium'>
+			<div className='my-4 flex md:justify-between gap-2'>
+				<h2 className='md:text-2xl text-sm font-medium'>
 					{language === 'latin' ? 'Voizlar' : 'Воизлар'}
 				</h2>
 				<button onClick={handleToggleShowAll}>
-					<span className='text-sm font-light'>
+					<span className='text-sm font-light hidden md:block'>
 						{showAll
 							? language === 'latin'
 								? 'Yashirish'
@@ -56,10 +57,11 @@ const VoicesSection: React.FC = () => {
 								? 'Barchasi'
 								: 'Барчаси'}{' '}
 					</span>
+					<ChevronRight className='block md:block' />
 				</button>
 			</div>
 
-			<div className='grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 '>
+			<div className='flex md:grid flex-row overflow-y-auto gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 '>
 				{visibleSpeakers.map(speaker => (
 					<VoicesCard
 						key={speaker.id}

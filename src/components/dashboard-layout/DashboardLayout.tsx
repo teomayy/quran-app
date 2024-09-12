@@ -7,10 +7,10 @@ export default function DashboardLayout({
 	children
 }: PropsWithChildren<unknown>) {
 	return (
-		<div className='grid p-4 min-h-screen 2xl:grid-cols-[1.1fr-6fr] grid-cols-[1.2fr_6fr]'>
+		<div className='grid md:p-4 min-h-screen 2xl:grid-cols-[1.1fr-6fr] md:grid-cols-[1.2fr_6fr]'>
 			<Sidebar />
 
-			<main className='p-pig-layout overflow-x-hidden max-h-screen relative'>
+			<main className='p-pig-layout overflow-x-hidden h-screen relative overflow-y-auto'>
 				<Navbar />
 				{children}
 			</main>

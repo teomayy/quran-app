@@ -8,7 +8,7 @@ import { useLanguageStore } from '@/store/useLanguageStore'
 export default function page() {
 	const { language } = useLanguageStore()
 	return (
-		<div className='p-4 m-4  rounded-lg'>
+		<div className='p-4 m-4 overflow-y-hidden h-screen rounded-lg'>
 			<Heading title={language === 'latin' ? 'Sozlamalar' : 'Созламалар'} />
 			<Settings />
 		</div>

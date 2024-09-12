@@ -9,12 +9,12 @@ import { MENU } from './menu.data'
 export function Sidebar() {
 	const menuItems = MENU()
 	return (
-		<aside className='h-full bg-sidebar flex flex-col gap-2 justify-between'>
+		<aside className='z-10 md:h-full bg-sidebar flex flex-col sm:flex-row gap-2 justify-between fixed md:static bottom-0 w-full'>
 			<div>
-				<div className='text-white w-80  rounded-lg bg-primary'>
+				<div className='text-white w-full md:w-80 md:rounded-lg bg-primary'>
 					<Link
 						href='/i'
-						className='flex items-center p-layout '
+						className='flex items-center p-4 hidden md:block'
 					>
 						<span className='text-2xl font-bold relative'>
 							Quran.app
@@ -23,7 +23,7 @@ export function Sidebar() {
 							</span>
 						</span>
 					</Link>
-					<div className='p-3 relative'>
+					<div className='md:p-3 flex flex-row md:flex-col justify-center'>
 						{menuItems.map(item => (
 							<MenuItem
 								item={item}
@@ -32,7 +32,9 @@ export function Sidebar() {
 						))}
 					</div>
 				</div>
-				<DayVerse />
+				<div className='hidden md:block'>
+					<DayVerse />
+				</div>
 			</div>
 		</aside>
 	)

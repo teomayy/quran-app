@@ -4,12 +4,12 @@ import { IMenuItem } from './menu.interface'
 
 export function MenuItem({ item }: { item: IMenuItem }) {
 	return (
-		<div className='w-60'>
+		<div className='md:w-60'>
 			<Link
 				href={item.link}
-				className='flex gap-2.5 p-3.5 rounded-lg hover:bg-white hover:text-primary items-center mt-2 px-layout'
+				className='flex flex-col md:flex-row gap-2.5 p-3.5 rounded-lg md:hover:bg-white md:hover:text-primary  md:text-white text-[#2B8B7E] hover:text-white items-center mt-2 px-4'
 			>
-				<item.icon className='text-[#2B8B7E]' />
+				<item.icon />
 				<span>{item.name}</span>
 			</Link>
 		</div>
