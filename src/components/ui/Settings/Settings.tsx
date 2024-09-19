@@ -39,14 +39,13 @@ const Settings = () => {
 	}
 
 	return (
-		<div className='flex flex-col gap-3 mt-3'>
-			Language: {lang}
+		<div className=' flex flex-col gap-3 mt-3'>
 			<div className='bg-white p-6 rounded-lg'>
 				<h2 className='text-xl font-semibold mb-4'>
 					<LangText id='settings_main' />
 				</h2>
 				<div className='h-0.5 bg-gray-200 mb-6 w-full'></div>
-				<div className='flex items-center justify-between mb-4 w-1/2'>
+				<div className='flex items-center justify-between mb-4 xl:w-1/2'>
 					<span className='text-lg'>
 						<LangText id='daily_verse' />
 					</span>
@@ -61,7 +60,7 @@ const Settings = () => {
 						></span>
 					</Switch>
 				</div>
-				<div className='flex items-center justify-between w-1/2'>
+				<div className='flex items-center justify-between xl:w-1/2'>
 					<span className='text-lg'>
 						<LangText id='save_history' />
 					</span>
@@ -82,7 +81,7 @@ const Settings = () => {
 					<LangText id='language_settings' />
 				</h2>
 				<div className='h-0.5 bg-border mb-6 w-full'></div>
-				<div className='flex items-center justify-between mb-4 w-1/2'>
+				<div className='flex items-center justify-between mb-4 xl:w-1/2 '>
 					<span className='text-lg'>O'zbekcha (Lotin)</span>
 					<Switch
 						checked={lang === 'latin'}
@@ -95,7 +94,7 @@ const Settings = () => {
 						></span>
 					</Switch>
 				</div>
-				<div className='flex items-center justify-between w-1/2'>
+				<div className='flex items-center justify-between xl:w-1/2'>
 					<span className='text-lg'>Ўзбекча (Кирилл)</span>
 					<Switch
 						checked={lang === 'cyrillic'}

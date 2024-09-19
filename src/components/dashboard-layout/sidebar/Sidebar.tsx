@@ -9,7 +9,7 @@ import { MENU } from './menu.data'
 export function Sidebar() {
 	const menuItems = MENU()
 	return (
-		<aside className='z-10 md:h-full bg-sidebar flex flex-col justify-between fixed md:static bottom-0 w-full'>
+		<aside className=' md:h-full  flex flex-col z-10  fixed md:relative bottom-0 max-w-full'>
 			<div>
 				<div className='text-white  md:w-80 md:rounded-lg bg-primary'>
 					<Link
@@ -23,7 +23,7 @@ export function Sidebar() {
 							</span>
 						</span>
 					</Link>
-					<div className='md:p-3 flex flex-row md:flex-col justify-center'>
+					<div className='md:p-3 flex flex-row md:flex-col justify-around mx-auto'>
 						{menuItems.map(item => (
 							<MenuItem
 								item={item}

@@ -9,11 +9,11 @@ export default function DashboardLayout({
 	return (
 		<div className='grid md:p-4 min-h-screen 2xl:grid-cols-[1.1fr-6fr] md:grid-cols-[1.2fr_6fr]'>
 			<Sidebar />
-
 			<main className='p-pig-layout overflow-x-hidden h-screen relative overflow-y-auto'>
 				<Navbar />
 				{children}
 			</main>
+			\
 		</div>
 	)
 }
