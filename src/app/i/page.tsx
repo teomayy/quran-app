@@ -8,11 +8,11 @@ import VoicesSection from '@/components/ui/Voices/VoicesSection'
 import { useLanguageStore } from '@/store/useLanguageStore'
 
 export default function DashboardPage() {
-	const { language } = useLanguageStore()
+	const { lang } = useLanguageStore()
 	return (
 		<div className='md:m-4 w-full md:bg-white md:rounded-lg '>
 			<div>
-				<Heading title={language === 'latin' ? 'Bosh sahifa' : 'Бош саҳифа'} />
+				<Heading title={lang === 'latin' ? 'Bosh sahifa' : 'Бош саҳифа'} />
 			</div>
 			<div className='md:px-6 p-4 bg-white rounded-2xl overflow-y-auto h-screen'>
 				<MostListened />

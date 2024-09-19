@@ -9,12 +9,12 @@ import { MENU } from './menu.data'
 export function Sidebar() {
 	const menuItems = MENU()
 	return (
-		<aside className='z-10 md:h-full bg-sidebar flex flex-col sm:flex-row gap-2 justify-between fixed md:static bottom-0 w-full'>
+		<aside className='z-10 md:h-full bg-sidebar flex flex-col justify-between fixed md:static bottom-0 w-full'>
 			<div>
-				<div className='text-white w-full md:w-80 md:rounded-lg bg-primary'>
+				<div className='text-white  md:w-80 md:rounded-lg bg-primary'>
 					<Link
 						href='/i'
-						className='flex items-center p-4 hidden md:block'
+						className='md:flex items-center p-4 hidden'
 					>
 						<span className='text-2xl font-bold relative'>
 							Quran.app

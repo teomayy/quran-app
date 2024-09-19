@@ -5,35 +5,55 @@ import { useEffect, useState } from 'react'
 
 import { useLanguageStore } from '@/store/useLanguageStore'
 
+import { LangText } from '@/dict'
+
 const Settings = () => {
-	const { language, toggleLanguage, setLanguage } = useLanguageStore()
+	const { lang, setLang } = useLanguageStore()
 	const [dailyVerse, setDailyVerse] = useState(true)
 	const [saveHistory, setSaveHistory] = useState(true)
 
 	useEffect(() => {
-		const savedLanguage = localStorage.getItem('quran-app-language')
-		if (savedLanguage) {
-			setLanguage(savedLanguage as 'latin' | 'cyrillic')
+		try {
+			const savedLanguage = localStorage.getItem('quran-app-language')
+			if (savedLanguage) {
+				setLang(savedLanguage as 'latin' | 'cyrillic')
+			}
+		} catch (e) {
+			console.error('Error accessing localStorage:', e)
 		}
-	}, [setLanguage])
+	}, [setLang])
+
+	const handleLanguageToggle = (lang: 'latin' | 'cyrillic') => {
+		try {
+			localStorage.setItem('quran-app-language', lang)
+			setLang(lang)
+		} catch (e) {
+			if (e instanceof DOMException && e.name === 'QuotaExceededError') {
+				console.error(
+					'LocalStorage quota exceeded. Language setting not saved.'
+				)
+			} else {
+				console.error('Error setting language:', e)
+			}
+		}
+	}
 
 	return (
 		<div className='flex flex-col gap-3 mt-3'>
-			<div className=' bg-white p-6 rounded-lg'>
+			Language: {lang}
+			<div className='bg-white p-6 rounded-lg'>
 				<h2 className='text-xl font-semibold mb-4'>
-					{language === 'latin' ? 'Asosiy' : 'Асосий'}
+					<LangText id='settings_main' />
 				</h2>
 				<div className='h-0.5 bg-gray-200 mb-6 w-full'></div>
 				<div className='flex items-center justify-between mb-4 w-1/2'>
 					<span className='text-lg'>
-						{language === 'latin'
-							? 'Kunlik oyatlar tavsiya qilinsinmi?'
-							: 'Кунлик оятлар тавсия қилинсинми?'}
+						<LangText id='daily_verse' />
 					</span>
 					<Switch
 						checked={dailyVerse}
 						onChange={setDailyVerse}
-						className={`${dailyVerse ? 'bg-primary' : 'bg-[#F2F4F7]'} relative inline-flex h-6 w-11 items-center rounded-full `}
+						className={`${dailyVerse ? 'bg-primary' : 'bg-[#F2F4F7]'} relative inline-flex h-6 w-11 items-center rounded-full`}
 					>
 						<span className='sr-only'>Enable Daily Verse</span>
 						<span
@@ -43,9 +63,7 @@ const Settings = () => {
 				</div>
 				<div className='flex items-center justify-between w-1/2'>
 					<span className='text-lg'>
-						{language === 'latin'
-							? 'Eshitilganlar tarixi saqlansinmi?'
-							: 'Эшитилганлар тирихини сақлансинми?'}
+						<LangText id='save_history' />
 					</span>
 					<Switch
 						checked={saveHistory}
@@ -59,35 +77,34 @@ const Settings = () => {
 					</Switch>
 				</div>
 			</div>
-
-			<div className=' bg-white p-6 rounded-lg'>
+			<div className='bg-white p-6 rounded-lg'>
 				<h2 className='text-xl font-semibold mb-4'>
-					{language === 'latin' ? 'Til sozlamari' : 'Тил созломалари'}
+					<LangText id='language_settings' />
 				</h2>
 				<div className='h-0.5 bg-border mb-6 w-full'></div>
 				<div className='flex items-center justify-between mb-4 w-1/2'>
 					<span className='text-lg'>O'zbekcha (Lotin)</span>
 					<Switch
-						checked={language === 'latin'}
-						onChange={toggleLanguage}
-						className={`${language === 'latin' ? 'bg-primary' : 'bg-[#F2F4F7]'} relative inline-flex h-6 w-11 items-center rounded-full`}
+						checked={lang === 'latin'}
+						onChange={() => handleLanguageToggle('latin')}
+						className={`${lang === 'latin' ? 'bg-primary' : 'bg-[#F2F4F7]'} relative inline-flex h-6 w-11 items-center rounded-full`}
 					>
 						<span className='sr-only'>Switch to Latin</span>
 						<span
-							className={`${language === 'latin' ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full  bg-white transition`}
+							className={`${lang === 'latin' ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition`}
 						></span>
 					</Switch>
 				</div>
 				<div className='flex items-center justify-between w-1/2'>
 					<span className='text-lg'>Ўзбекча (Кирилл)</span>
 					<Switch
-						checked={language === 'cyrillic'}
-						onChange={toggleLanguage}
-						className={`${language === 'cyrillic' ? 'bg-primary' : 'bg-[#F2F4F7]'} relative inline-flex h-6 w-11 items-center rounded-full`}
+						checked={lang === 'cyrillic'}
+						onChange={() => handleLanguageToggle('cyrillic')}
+						className={`${lang === 'cyrillic' ? 'bg-primary' : 'bg-[#F2F4F7]'} relative inline-flex h-6 w-11 items-center rounded-full`}
 					>
 						<span className='sr-only'>Switch to Cyrillic</span>
 						<span
-							className={`${language === 'cyrillic' ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition`}
+							className={`${lang === 'cyrillic' ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition`}
 						></span>
 					</Switch>
 				</div>

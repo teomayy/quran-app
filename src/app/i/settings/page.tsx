@@ -6,10 +6,10 @@ import Settings from '@/components/ui/Settings/Settings'
 import { useLanguageStore } from '@/store/useLanguageStore'
 
 export default function page() {
-	const { language } = useLanguageStore()
+	const { lang } = useLanguageStore()
 	return (
 		<div className='p-4 m-4 overflow-y-hidden h-screen rounded-lg'>
-			<Heading title={language === 'latin' ? 'Sozlamalar' : 'Созламалар'} />
+			<Heading title={lang === 'latin' ? 'Sozlamalar' : 'Созламалар'} />
 			<Settings />
 		</div>
 	)

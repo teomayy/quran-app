@@ -8,9 +8,10 @@ import { useLanguageStore } from '@/store/useLanguageStore'
 import MostListenedCard from './MostListenedCard'
 import { IMLSpeakerItem } from './mostListened-speakers.interface'
 import { SPEAKERS_MOST_LISTENED } from '@/data/speakers-mostListened-data'
+import { LangText } from '@/dict'
 
 const MostListened: React.FC = () => {
-	const { language } = useLanguageStore()
+	const { lang } = useLanguageStore()
 	const [showAll, setShowAll] = useState(false)
 
 	const speakers: IMLSpeakerItem[] = SPEAKERS_MOST_LISTENED
@@ -21,10 +22,10 @@ const MostListened: React.FC = () => {
 	}
 
 	const buttonText = showAll
-		? language === 'latin'
+		? lang === 'latin'
 			? 'Yashirish'
 			: 'Яшириш'
-		: language === 'latin'
+		: lang === 'latin'
 			? 'Barchasi'
 			: 'Барчаси'
 
@@ -32,7 +33,7 @@ const MostListened: React.FC = () => {
 		<section>
 			<div className='md:my-4 mb-2 flex md:justify-between items-center gap-2'>
 				<h2 className='md:text-2xl text-sm  font-medium'>
-					{language === 'latin' ? "Eng ko'p tinglashadi" : 'Энг кўп тинглашади'}
+					<LangText id='most_listened' />
 				</h2>
 				<button onClick={handleToggleShowAll}>
 					<span className='hidden md:block text-sm font-light'>

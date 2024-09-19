@@ -9,9 +9,10 @@ import { ISpeakerItem } from '../Speakers/speakers.interface'
 
 import VoicesCard from './VoicesCard'
 import { SPEAKERS } from '@/data/speakers-data'
+import { LangText } from '@/dict'
 
 const VoicesSection: React.FC = () => {
-	const { language } = useLanguageStore()
+	const { lang } = useLanguageStore()
 	const [showAll, setShowAll] = useState(false)
 	const [columns, setColumns] = useState(5)
 
@@ -45,19 +46,19 @@ const VoicesSection: React.FC = () => {
 		<section>
 			<div className='my-4 flex md:justify-between gap-2'>
 				<h2 className='md:text-2xl text-sm font-medium'>
-					{language === 'latin' ? 'Voizlar' : 'Воизлар'}
+					<LangText id='voices' />
 				</h2>
 				<button onClick={handleToggleShowAll}>
 					<span className='text-sm font-light hidden md:block'>
 						{showAll
-							? language === 'latin'
+							? lang === 'latin'
 								? 'Yashirish'
 								: 'Яшириш'
-							: language === 'latin'
+							: lang === 'latin'
 								? 'Barchasi'
 								: 'Барчаси'}{' '}
 					</span>
-					<ChevronRight className='block md:block' />
+					<ChevronRight className='block md:hidden' />
 				</button>
 			</div>
 

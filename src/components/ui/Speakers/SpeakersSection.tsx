@@ -8,9 +8,10 @@ import { useLanguageStore } from '@/store/useLanguageStore'
 import SpeakersCard from './SpeakersCard'
 import { ISpeakerItem } from './speakers.interface'
 import { SPEAKERS } from '@/data/speakers-data'
+import { LangText } from '@/dict'
 
 const SpeakersSection: React.FC = () => {
-	const { language } = useLanguageStore()
+	const { lang } = useLanguageStore()
 	const [showAll, setShowAll] = useState(false)
 	const [columns, setColumns] = useState(5)
 
@@ -45,19 +46,19 @@ const SpeakersSection: React.FC = () => {
 		<section>
 			<div className='mb-4 flex md:justify-between gap-2'>
 				<h2 className='md:text-2xl text-sm font-medium'>
-					{language === 'latin' ? 'Qorilar' : 'Қорилар'}
+					<LangText id='speakers' />
 				</h2>
 				<button onClick={handleToggleShowAll}>
 					<span className='text-sm hidden md:block font-light'>
 						{showAll
-							? language === 'latin'
+							? lang === 'latin'
 								? 'Yashirish'
 								: 'Яшириш'
-							: language === 'latin'
+							: lang === 'latin'
 								? 'Barchasi'
 								: 'Барчаси'}
 					</span>
-					<ChevronRight />
+					<ChevronRight className='block md:hidden' />
 				</button>
 			</div>
 

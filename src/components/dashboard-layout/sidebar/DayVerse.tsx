@@ -2,14 +2,16 @@ import { CircleChevronLeft, CircleChevronRight, Play } from 'lucide-react'
 
 import { useLanguageStore } from '@/store/useLanguageStore'
 
+import { LangText } from '@/dict'
+
 export function DayVerse() {
-	const { language } = useLanguageStore()
+	const { lang } = useLanguageStore()
 
 	return (
 		<div className='bg-primary p-4 mt-4 rounded-lg max-w-sm mx-auto'>
 			<div className='flex justify-between items-center mb-4'>
 				<h2 className='text-white text-xl font-bold'>
-					{language === 'latin' ? 'Kun oyati' : 'Кўн ояти'}
+					<LangText id='dailyVerse' />
 				</h2>
 				<div className='flex space-x-2'>
 					<button className='text-white'>
