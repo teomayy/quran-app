@@ -4,7 +4,11 @@ interface ISCardProps {
 	birth_place: string
 }
 
-const SpeakersCard: React.FC<ISCardProps> = ({ name, image, birth_place }) => {
+const SpeakersFullCard: React.FC<ISCardProps> = ({
+	name,
+	image,
+	birth_place
+}) => {
 	return (
 		<div className='w-full flex flex-col gap-2 mb-4  items-start '>
 			<div className='md:w-44 md:h-44 h-28 w-44'>
@@ -21,4 +25,4 @@ const SpeakersCard: React.FC<ISCardProps> = ({ name, image, birth_place }) => {
 	)
 }
 
-export default SpeakersCard
+export default SpeakersFullCard

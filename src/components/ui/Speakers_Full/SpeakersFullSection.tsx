@@ -5,12 +5,12 @@ import { useEffect, useState } from 'react'
 
 import { useLanguageStore } from '@/store/useLanguageStore'
 
-import SpeakersCard from './SpeakersCard'
+import SpeakersCard from './SpeakersFullCard'
 import { ISpeakerItem } from './speakers.interface'
 import { SPEAKERS } from '@/data/speakers-data'
 import { LangText } from '@/dict'
 
-const SpeakersSection: React.FC = () => {
+const SpeakersFullSection: React.FC = () => {
 	const { lang } = useLanguageStore()
 	const [showAll, setShowAll] = useState(false)
 	const [columns, setColumns] = useState(5)
@@ -74,4 +74,4 @@ const SpeakersSection: React.FC = () => {
 	)
 }
 
-export default SpeakersSection
+export default SpeakersFullSection

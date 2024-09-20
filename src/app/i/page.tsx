@@ -2,7 +2,7 @@
 
 import { Heading } from '@/components/ui/Heading'
 import MostListened from '@/components/ui/Most_Listened/MostListened'
-import SpeakersSection from '@/components/ui/Speakers/SpeakersSection'
+import SpeakersSection from '@/components/ui/Speakers_Full/SpeakersFullSection'
 import VoicesSection from '@/components/ui/Voices/VoicesSection'
 
 import { useLanguageStore } from '@/store/useLanguageStore'

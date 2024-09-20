@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 import { useLanguageStore } from '@/store/useLanguageStore'
 
-import { ISpeakerItem } from '../Speakers/speakers.interface'
+import { ISpeakerItem } from '../Speakers_Full/speakers.interface'
 
 import VoicesCard from './VoicesCard'
 import { SPEAKERS } from '@/data/speakers-data'

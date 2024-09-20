@@ -1,4 +1,4 @@
-import { ISpeakerItem } from '@/components/ui/Speakers/speakers.interface'
+import { ISpeakerItem } from '@/components/ui/Speakers_Full/speakers.interface'
 
 export const SPEAKERS: ISpeakerItem[] = [
 	{
