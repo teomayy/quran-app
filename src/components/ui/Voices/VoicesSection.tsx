@@ -44,7 +44,7 @@ const VoicesSection: React.FC = () => {
 
 	return (
 		<section>
-			<div className='my-4 flex md:justify-between gap-2'>
+			<div className='my-4 flex md:justify-between gap-2 '>
 				<h2 className='md:text-2xl text-sm font-medium'>
 					<LangText id='voices' />
 				</h2>

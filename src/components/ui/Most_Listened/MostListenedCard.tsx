@@ -20,7 +20,9 @@ const MostListenedCard: React.FC<IMLCardProps> = ({
 			</div>
 			<div className='flex flex-col items-center gap-1 text-center md:text-left'>
 				<p className='text-xs max-w-[105px] truncate'>{name}</p>
-				<sub className='text-xs text-[#5D5D5D] hidden md:block'>{subtitle}</sub>
+				<p className='text-[13px] text-[#5D5D5D]  hidden md:block'>
+					{subtitle}
+				</p>
 			</div>
 		</div>
 	)
