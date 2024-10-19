@@ -92,8 +92,8 @@ const Shorts: React.FC<ShortsProps> = ({
 	}, [])
 
 	return (
-		<div className='relative h-screen flex flex-col items-center justify-start md:h-[600px] md:w-[350px] mx-auto '>
-			<div className='relative'>
+		<div className='relative h-full flex flex-col items-center justify-start md:h-[600px] md:w-[350px] mx-auto overflow-auto'>
+			<div className='relative w-full h-full'>
 				<video
 					ref={videoRef}
 					src={videoSrc || '/public/AyatUlKursi.mp4'}
@@ -130,7 +130,7 @@ const Shorts: React.FC<ShortsProps> = ({
 					</div>
 				</div>
 
-				<div className='absolute bottom-4 left-4 right-4 flex items-center'>
+				<div className='absolute bottom-24 left-4 right-4 flex items-center'>
 					<input
 						type='range'
 						className='w-full h-0.5 bg-gray-300 rounded-lg appearance-none cursor-pointer'
