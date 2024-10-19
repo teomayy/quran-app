@@ -97,7 +97,7 @@ const Shorts: React.FC<ShortsProps> = ({
 				<video
 					ref={videoRef}
 					src={videoSrc || '/public/AyatUlKursi.mp4'}
-					className='w-full h-full rounded-lg object-cover md:w-[350px] md:h-[600px]'
+					className='w-full h-full md:rounded-lg object-cover md:w-[350px] md:h-[600px]'
 					muted={isMuted}
 					onTimeUpdate={handleTimeUpdate}
 					onClick={handleVideoClick}
@@ -140,7 +140,7 @@ const Shorts: React.FC<ShortsProps> = ({
 				</div>
 			</div>
 
-			<div className='absolute bottom-6 left-0 md:left-0 md:bottom-6 md:flex md:flex-col md:items-start md:ml-2'>
+			<div className='absolute bottom-28 left-4 md:left-0 md:bottom-6 md:flex md:flex-col md:items-start md:ml-2'>
 				<div className='flex items-center gap-4'>
 					<img
 						src={speakerPhoto}
@@ -156,7 +156,7 @@ const Shorts: React.FC<ShortsProps> = ({
 				</div>
 			</div>
 
-			<div className='absolute right-4 bottom-72 space-y-2 md:bottom-8 gap-4 md:space-x-4 md:space-y-0 items-center justify-center flex flex-col text-white'>
+			<div className='absolute right-4 bottom-52 space-y-2 md:bottom-8 gap-4 md:space-x-4 md:space-y-0 items-center justify-center flex flex-col text-white'>
 				<button className='flex items-center text-white md:bg-primary rounded-full p-2'>
 					<Heart className='w-5 h-5' />
 				</button>
