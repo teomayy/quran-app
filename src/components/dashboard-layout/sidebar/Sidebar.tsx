@@ -9,7 +9,7 @@ import { MENU } from './menu.data'
 export function Sidebar() {
 	const menuItems = MENU()
 	return (
-		<div className='z-10 md:w-80 md:overflow-y-auto md:h-full fixed md:relative bottom-0 w-full shadow-md'>
+		<div className='z-10 md:w-80 md:h-full fixed overflow-y-scroll md:relative bottom-0 w-full shadow-md'>
 			<div className='text-white md:rounded-lg bg-primary'>
 				<Link
 					href='/i'

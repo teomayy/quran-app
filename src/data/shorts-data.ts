@@ -1,23 +1,24 @@
 export const SHORTS_DATA = [
 	{
-		videoId: 'video1',
-		videoUrl: 'https://youtube.com/shorts/tq7_d_BylYk?si=SAxMEVk6X_JwxL0E',
-		title:
-			'(Dunyo uchun yig‘laysanmi) juda ta‘sirli 😢😢 Shayx Sodiq Samarqandiy'
+		id: 1,
+		videoSrc: '/AyatUlKursi.mp4',
+		speakerPhoto: '/Abdulbosit.jpeg',
+		speaker: 'Bola',
+		title: 'Ayat Ul Kursi'
 	},
 	{
-		videoId: 'video2',
-		videoUrl: 'https://youtube.com/shorts/P8eS3pKmfwQ?si=RjlJP5Wb8wHFMzYG',
-		title: 'Shayx Sodiq Samarqandiy'
+		id: 2,
+		videoSrc: '/Duo.mp4',
+		speakerPhoto: '/Alijon.jpeg',
+		speaker: 'Shayx Alijon',
+		title: 'Qibladanda yaxshiroq narsa'
 	},
 	{
-		videoId: 'video3',
-		videoUrl: 'https://youtube.com/shorts/I9YOdtFAyq0?si=8bknkWEmvc6KkORd',
-		title: 'Shayx Sodiq Samarqandiy'
+		id: 3,
+		videoSrc: 'Ayat ul kursi.mp4'
 	},
 	{
-		videoId: 'video4',
-		videoUrl: 'https://youtube.com/shorts/CCYatLjpY-E?si=4-Pb_86zQXQxC2zq',
-		title: 'ЛА ИЛАХА ИЛАЛЛОХ МУХАММАДАН РАСУЛУЛЛОХ😪😪😪😪😪😪😪😪'
+		id: 4,
+		videoSrc: 'Ayat ul kursi.mp4'
 	}
 ]
