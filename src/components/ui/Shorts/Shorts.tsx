@@ -92,7 +92,7 @@ const Shorts: React.FC<ShortsProps> = ({
 	}, [])
 
 	return (
-		<div className='relative h-screen flex flex-col items-center justify-start md:h-[600px] md:w-1/2 mx-auto '>
+		<div className='relative h-screen flex flex-col items-center justify-start md:h-[600px] md:w-[350px] mx-auto '>
 			<div className='relative'>
 				<video
 					ref={videoRef}
@@ -140,7 +140,7 @@ const Shorts: React.FC<ShortsProps> = ({
 				</div>
 			</div>
 
-			<div className='absolute bottom-8 left-4 md:left-0 md:bottom-6 md:flex md:flex-col md:items-start md:ml-2'>
+			<div className='absolute bottom-6 left-0 md:left-0 md:bottom-6 md:flex md:flex-col md:items-start md:ml-2'>
 				<div className='flex items-center gap-4'>
 					<img
 						src={speakerPhoto}
@@ -156,7 +156,7 @@ const Shorts: React.FC<ShortsProps> = ({
 				</div>
 			</div>
 
-			<div className='absolute right-0 bottom-8 space-y-6 md:bottom-4 gap-4 md:space-x-4 md:space-y-0 items-center justify-center flex flex-col text-white'>
+			<div className='absolute right-4 bottom-72 space-y-2 md:bottom-8 gap-4 md:space-x-4 md:space-y-0 items-center justify-center flex flex-col text-white'>
 				<button className='flex items-center text-white md:bg-primary rounded-full p-2'>
 					<Heart className='w-5 h-5' />
 				</button>

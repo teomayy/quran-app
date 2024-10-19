@@ -9,8 +9,10 @@ export default function page() {
 	const { lang } = useLanguageStore()
 
 	return (
-		<div className='p-4 m-4 bg-white rounded-lg'>
-			<Heading title={lang === 'latin' ? 'Qisqa' : 'Қисқа'} />
+		<div className='mt-7 md:p-4 md:m-4 md:bg-white md:rounded-lg'>
+			<div className='hidden md:block'>
+				<Heading title={lang === 'latin' ? 'Qisqa' : 'Қисқа'} />
+			</div>
 			<ShortsList />
 		</div>
 	)
