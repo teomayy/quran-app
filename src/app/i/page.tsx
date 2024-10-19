@@ -10,7 +10,7 @@ import { useLanguageStore } from '@/store/useLanguageStore'
 export default function DashboardPage() {
 	const { lang } = useLanguageStore()
 	return (
-		<div className='md:m-4 w-full md:bg-white md:rounded-lg '>
+		<div className='md:m-2 w-full md:bg-white md:rounded-lg '>
 			<div>
 				<Heading title={lang === 'latin' ? 'Bosh sahifa' : 'Бош саҳифа'} />
 			</div>

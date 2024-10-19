@@ -92,19 +92,19 @@ const Shorts: React.FC<ShortsProps> = ({
 	}, [])
 
 	return (
-		<div className='relative h-full flex flex-col items-center justify-start md:h-[600px] md:w-[350px] mx-auto overflow-auto'>
+		<div className='relative h-[680px] flex flex-row items-center justify-start md:h-[520px] md:w-[370px] lg:h-[580px] lg:w-[420px] mx-auto overflow-auto'>
 			<div className='relative w-full h-full'>
 				<video
 					ref={videoRef}
 					src={videoSrc || '/public/AyatUlKursi.mp4'}
-					className='w-full h-full md:rounded-lg object-cover md:w-[350px] md:h-[600px]'
+					className='w-full h-full md:rounded-lg object-cover md:w-[300px] md:h-[520px] lg:h-[580px] lg:w-[400px]'
 					muted={isMuted}
 					onTimeUpdate={handleTimeUpdate}
 					onClick={handleVideoClick}
 				></video>
 
 				<div className='absolute top-4 left-4 flex space-x-4'>
-					<div className='border p-2 rounded-full flex '>
+					<div className='border p-2 rounded-full flex'>
 						<button
 							className='text-white'
 							onClick={togglePlayPause}
@@ -130,17 +130,21 @@ const Shorts: React.FC<ShortsProps> = ({
 					</div>
 				</div>
 
-				<div className='absolute bottom-24 left-4 right-4 flex items-center'>
+				<div className='absolute bottom-5 left-4 right-4 flex items-center'>
 					<input
 						type='range'
 						className='w-full h-0.5 bg-gray-300 rounded-lg appearance-none cursor-pointer'
+						style={{
+							background: `linear-gradient(to right, white ${progress}%, gray ${progress}%)`,
+							accentColor: '#126559'
+						}}
 						value={progress}
 						onChange={handleSeek}
 					/>
 				</div>
 			</div>
 
-			<div className='absolute bottom-28 left-4 md:left-0 md:bottom-6 md:flex md:flex-col md:items-start md:ml-2'>
+			<div className='absolute bottom-10 left-4 md:left-2 md:bottom-10 md:flex md:flex-col md:items-start md:ml-2'>
 				<div className='flex items-center gap-4'>
 					<img
 						src={speakerPhoto}
@@ -156,16 +160,33 @@ const Shorts: React.FC<ShortsProps> = ({
 				</div>
 			</div>
 
-			<div className='absolute right-4 bottom-52 space-y-2 md:bottom-8 gap-4 md:space-x-4 md:space-y-0 items-center justify-center flex flex-col text-white'>
-				<button className='flex items-center text-white md:bg-primary rounded-full p-2'>
+			{/* Кнопки для мобильной версии внутри видео */}
+			<div className='absolute right-4  items-center bottom-10 space-y-2 gap-1 flex flex-col text-white md:hidden'>
+				<button className='flex items-center justify-center text-white bg-[#000] bg-opacity-50 p-4 rounded-full'>
 					<Heart className='w-5 h-5' />
 				</button>
 				<span>Yoqdi</span>
-				<button className='flex items-center text-white md:bg-primary rounded-full p-2'>
+				<button className='flex items-center justify-center text-white bg-[#000] bg-opacity-50 p-4 rounded-full'>
 					<Download className='w-5 h-5' />
 				</button>
 				<span>Yuklash</span>
-				<button className='flex items-center text-white md:bg-primary rounded-full p-2'>
+				<button className='flex items-center justify-center text-white bg-[#000] bg-opacity-50 p-4 rounded-full'>
+					<Share2 className='w-5 h-5' />
+				</button>
+				<span>Ulashish</span>
+			</div>
+
+			{/* Кнопки для desktop вне видео */}
+			<div className='hidden md:flex md:flex-col md:items-center md:space-y-2 md:ml-2 md:justify-end md:font-light md:text-xs'>
+				<button className='flex items-center text-white bg-primary p-4 rounded-full'>
+					<Heart className='w-5 h-5' />
+				</button>
+				<span>Yoqdi</span>
+				<button className='flex items-center text-white bg-primary p-4 rounded-full'>
+					<Download className='w-5 h-5' />
+				</button>
+				<span>Yuklash</span>
+				<button className='flex items-center text-white bg-primary p-4 rounded-full'>
 					<Share2 className='w-5 h-5' />
 				</button>
 				<span>Ulashish</span>
